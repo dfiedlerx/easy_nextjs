@@ -1,0 +1,33 @@
+name: Sonar Cloud
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Project
+        run: npm install
+      - name: CI 
+        run: npm ci
+      - name: Build
+        run: npm run build --if-present
+      - name: Tests
+        run: npm run test
+
+
+  

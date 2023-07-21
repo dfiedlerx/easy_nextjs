@@ -1,0 +1,19 @@
+{
+  "LABEL": {
+    "name": "non-standard title",
+    "color": "FF0000"
+  },
+  "CHECKS": {
+    "regexp": "(fix|feat|test|docs|perf|chore|refactor|style|ci|build)(\\([^\\)]+\\))?: .*$",
+    "regexpFlags": "i",
+    "ignoreLabels": [
+      "HOTFIX",
+      "no-verify"
+    ]
+  },
+  "MESSAGES": {
+    "success": "All OK",
+    "failure": "Failing in title test",
+    "notice": ""
+  }
+}
