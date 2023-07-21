@@ -1,0 +1,23 @@
+{
+  "temp-directory": "./coverage/.nyc_output",
+  "include": [
+    "server/**/*.js",
+    "index.js"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/test/nodejs/**",
+    "**/coverage/**"
+  ],
+  "all": true,
+  "lines": 10,
+  "statements": 10,
+  "functions": 10,
+  "branches": 10,
+  "reporter": [
+    "text",
+    "text-summary",
+    "lcov"
+  ],
+  "sourceMap": false
+}

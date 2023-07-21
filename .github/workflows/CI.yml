@@ -16,13 +16,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Use Node.js 18
+      - name: Use Node.js 19
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 19
       - name: Install Project
         run: npm install
-      - name: CI 
+      - name: CI
         run: npm ci
       - name: Build
         run: npm run build --if-present
@@ -30,4 +30,3 @@ jobs:
         run: npm run test
 
 
-  
