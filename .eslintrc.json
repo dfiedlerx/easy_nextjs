@@ -1,7 +1,21 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:react-hooks/recommended",
-    "plugin:sonarjs/recommended"
-  ]
+    "plugin:react-hooks/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+    "parserOptions": { "project": ["./tsconfig.json"] },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/strict-boolean-expressions": [
+            2,
+            {
+                "allowString" : false,
+                "allowNumber" : false
+            }
+        ]
+    },
+    "ignorePatterns": ["src/**/*.test.ts", "src/frontend/generated/*"]
 }

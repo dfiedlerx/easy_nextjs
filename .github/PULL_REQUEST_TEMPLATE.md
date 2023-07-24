@@ -12,4 +12,4 @@ Briefly describe the changes.
 Before and after
 
 ## Requirements :pencil2:
-Kanbanize link
+Trello link

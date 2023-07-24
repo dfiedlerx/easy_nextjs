@@ -16,6 +16,7 @@
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
     "autoprefixer": "10.4.14",
     "commitlint": "^17.6.7",
     "eslint": "^8.44.0",
@@ -24,12 +25,15 @@
     "postcss": "8.4.25",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "styled-components": "^6.0.5",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@testing-library/dom": "^9.3.1",
+    "@testing-library/react": "^14.0.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "husky": "^8.0.3",
-    "jest": "^29.6.1",
-    "testing-library": "^0.0.2"
+    "jest": "^29.6.1"
   }
 }
