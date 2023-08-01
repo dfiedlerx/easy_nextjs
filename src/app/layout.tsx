@@ -1,6 +1,12 @@
-import '@/app/globals.css'
+import { ReactElement, ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+
+import DarkModeButton from '@/components/DarkModeButton/dark-mode-button.component'
+import ReduxProvider from '@/providers/redux-provider/redux-provider'
+import ThemeProvider from '@/providers/theme-provider/theme-provider'
+
+import '@/app/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,14 +18,20 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
-}) {
+  children: ReactNode
+}): ReactElement {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>Header App</div>
-        {children}
-        <div>Footer App</div>
+        <ReduxProvider>
+          <ThemeProvider>
+            <h1 className="text-4xl w-full bg-blue-700 p-3 flex justify-center">
+              Header App
+            </h1>
+            {children}
+            <DarkModeButton />
+          </ThemeProvider>
+        </ReduxProvider>
       </body>
     </html>
   )

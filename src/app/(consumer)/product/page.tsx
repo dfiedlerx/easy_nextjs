@@ -1,9 +1,5 @@
-import Image from 'next/image'
+import { ReactElement } from 'react'
 
-export default function Home() {
-  return (
-    <div>
-      Product Page
-    </div>
-  )
+export default function Page(): ReactElement {
+  return <div>Product Page</div>
 }

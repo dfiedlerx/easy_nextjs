@@ -12,13 +12,22 @@ yarn dev
 pnpm dev
 ```
 
-USING NODE V18
+USING NODE V19
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Generate new files using
+
+Components
+npx generate-react-cli component Box
+Routes
+npx generate-react-cli component page-generated --type=route
+Screens
+npx generate-react-cli component page-generated --type=screen
 
 ## Learn More
 
@@ -34,3 +43,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Stacks
+
+NextJS 13 - SSR and Router,
+React 18 - DOM Manipulator,
+React Hooks - States and Hydration,
+Eslint - Linter,
+Redux/Redux Persist - Global State,
+Tailwind - CSS and Styles
+Jest/Testing Library - For test coverage
+Typescript - Type Hint

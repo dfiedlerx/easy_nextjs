@@ -1,0 +1,51 @@
+{
+  "usesTypeScript": true,
+  "usesCssModule": true,
+  "cssPreprocessor": "css",
+  "testLibrary": "Testing Library",
+  "component": {
+    "default": {
+      "path": "src/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": true
+    },
+    "route": {
+      "customTemplates": {
+        "test": "generators/route/page.test.tsx",
+        "component": "generators/route/page.tsx"
+      },
+      "path": "src/app",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": false,
+      "withTest": true
+    },
+    "screen": {
+      "path": "src/screens",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": true,
+      "withTest": true
+    },
+    "service": {
+      "customTemplates": {
+        "test": "generators/service/template-name.service.test.tsx",
+        "component": "generators/service/template-name.service.tsx"
+      },
+      "path": "src/services",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": false,
+      "withTest": true
+    },
+    "templates": {
+      "path": "src/templates",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": true,
+      "withTest": true
+    }
+  }
+}
