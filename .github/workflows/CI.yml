@@ -1,4 +1,4 @@
-name: Sonar Cloud
+name: CI
 on:
   push:
     branches:
@@ -25,5 +25,3 @@ jobs:
         run: npm run build --if-present
       - name: Tests
         run: npm run test
-
-
