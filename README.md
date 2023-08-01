@@ -28,6 +28,8 @@ Routes
 npx generate-react-cli component page-generated --type=route
 Screens
 npx generate-react-cli component page-generated --type=screen
+Services
+npx generate-react-cli component service-generated --type=service
 
 ## Learn More
 
