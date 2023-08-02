@@ -7,7 +7,7 @@ const initialState = {
 } as CounterState
 
 const persistSave = createSlice({
-  name: 'counter',
+  name: 'counterPersist',
   initialState,
   reducers: {
     reset: () => initialState,
