@@ -1,6 +1,7 @@
 'use client'
 
 import { ReactElement } from 'react'
+import { useRouter } from 'next/navigation'
 
 import {
   decrement,
@@ -13,6 +14,7 @@ import useAppSelector from '@/redux/selectors/useAppSelector/useAppSelector'
 export default function Home(): ReactElement {
   const count = useAppSelector((state) => state.persistSaveReducerPersisted.value)
   const dispatch = useAppDispatch()
+  const { push } = useRouter()
 
   return (
     <main style={{ maxWidth: 1200, marginInline: 'auto', padding: 20 }}>
@@ -23,7 +25,16 @@ export default function Home(): ReactElement {
         <button onClick={() => dispatch(decrement())} style={{ marginInline: 16 }}>
           decrement
         </button>
-        <button onClick={() => dispatch(reset())}>reset</button>
+        <button onClick={() => dispatch(reset())} style={{ marginInline: 16 }}>
+          reset
+        </button>
+        <button
+          onClick={() => {
+            push('/redux-example')
+          }}
+        >
+          redirect
+        </button>
       </div>
     </main>
   )

@@ -1,8 +1,15 @@
 import userEvent from '@testing-library/user-event'
 
 import Page from '@/app/(redux)/redux-persist-example/page'
+import useRouterMock, { pushMock } from '@/mocks/useRouter.mock'
 import { resetStore } from '@/redux/store/store'
 import { render, screen, waitFor } from '@/utils/test-utils'
+
+jest.mock('next/navigation', () => ({
+  useRouter() {
+    return useRouterMock
+  },
+}))
 
 describe('@/app/(redux)/redux-persist-example/page', () => {
   beforeEach(() => {
@@ -52,6 +59,18 @@ describe('@/app/(redux)/redux-persist-example/page', () => {
 
     await waitFor(() => {
       expect(screen.getByText('0')).toBeInTheDocument()
+    })
+  })
+
+  it('should redirect when clicked', async () => {
+    render(<Page />)
+    expect(screen.getByText(0)).toBeInTheDocument()
+
+    const decrement = screen.getByText('redirect')
+    await userEvent.click(decrement)
+
+    await waitFor(() => {
+      expect(pushMock).toHaveBeenCalledWith('/redux-example')
     })
   })
 })
