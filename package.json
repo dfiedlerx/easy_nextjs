@@ -9,6 +9,7 @@
     "test": "jest --forceExit --coverage --no-cache --detectOpenHandles --passWithNoTests",
     "test:dev": "jest --watch --forceExit --coverage --no-cache --detectOpenHandles --passWithNoTests",
     "lint": "next lint",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.tsx,.ts .",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -22,7 +23,6 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
     "react-redux": "^8.1.2",
-    "redux-persist": "^6.0.0",
     "tailwind-variants": "^0.1.13",
     "tailwindcss": "3.3.3"
   },
@@ -35,7 +35,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/node": "20.4.5",
+    "@types/node": "20.4.6",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
@@ -44,7 +44,7 @@
     "commitlint": "^17.6.7",
     "eslint": "^8.46.0",
     "eslint-config-next": "13.4.12",
-    "eslint-config-prettier": "^8.9.0",
+    "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.3",
@@ -52,7 +52,7 @@
     "jest-environment-jsdom": "^29.6.2",
     "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^13.2.3",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.1",
     "typescript": "5.1.6",
     "web-vitals": "^3.4.0",
     "webpack": "^5.88.2"

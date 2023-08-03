@@ -1,6 +1,12 @@
-import Page from '@/app/(service)/service-example/page'
+import userEvent from '@testing-library/user-event'
+
 import usersMock from '@/mocks/users.mock'
+import fetchFromApi from '@/utils/fetchFromApi'
 import { act, render, screen, waitFor } from '@/utils/test-utils'
+
+import ServiceExampleScreen from './service-example-screen'
+
+jest.mock('@/utils/fetchFromApi', () => jest.fn().mockReturnValue({ data: [] }))
 
 describe('@/app/(service)/service-example/page with User', () => {
   beforeEach((): void => {
@@ -10,11 +16,25 @@ describe('@/app/(service)/service-example/page with User', () => {
 
   it('should render a user', async () => {
     await act(() => {
-      render(<Page />)
+      render(<ServiceExampleScreen ssdata={usersMock} />)
     })
 
     await waitFor(() => {
       expect(screen.queryAllByText('Leanne Graham')['0']).toBeInTheDocument()
+    })
+  })
+
+  it('should call getUsers on guys click', async () => {
+    await act(() => {
+      render(<ServiceExampleScreen ssdata={usersMock} />)
+    })
+
+    const guys = screen.getByText('Guys')
+
+    userEvent.click(guys)
+
+    await waitFor(() => {
+      expect(fetchFromApi).toBeCalledWith('getUsers')
     })
   })
 })
@@ -28,7 +48,7 @@ describe('@/app/(service)/service-example/page without User', () => {
   it('should render Page', async () => {
     fetchMock.mockResponse(JSON.stringify([]))
     await act(() => {
-      render(<Page />)
+      render(<ServiceExampleScreen ssdata={[]} />)
     })
 
     expect(screen.queryByRole('main')).toBeInTheDocument()
