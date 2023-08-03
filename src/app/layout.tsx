@@ -22,6 +22,7 @@ export default function RootLayout({
 }): ReactElement {
   return (
     <html lang="en">
+      <head></head>
       <body className={inter.className}>
         <ReduxProvider>
           <ThemeProvider>
